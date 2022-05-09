@@ -19,7 +19,7 @@
     </div>
 </div>
 <div class="main">
-    <div style="display: inline-block; width: 45%;">
+    <div style="display: inline-block; width: 50%;">
         <h3 style="padding-left: 10px; padding-top:6px; font-family: cursive;">Image text detection</h3>
         <p style="padding-left: 10px; margin-top: 10px;">If you want to get the text from an image, please enter the image link below</p>
         <form class="example-form">
@@ -34,14 +34,14 @@
         </mat-form-field>
     </div>
 
-    <div style="display: inline-block; width: 50%;">
+    <div style="display: inline-block; width: 48%;">
         <h3 style="padding-left: 10px; padding-top:6px; font-family: cursive;">Image landmark detection</h3>
         <p style="padding-left: 10px; margin-top: 10px;">If you want to get the landmark from an image, please upload one</p>
-        <div>
-            <form (ngSubmit)="upload()" [formGroup]="form">
-                <input style="width: 100% !important; margin-top: 10px; margin-left: 10px !important;" type="file" accept="*" (change)="onFileSelect($event)">
-            </form>
-        </div>
+        <div [innerHtml]='message' *ngIf="message" style="color: red;"></div>
+        <div style="margin-left: 10px;"><img [src]="url" *ngIf="url" style="width: 400px;"></div>
+        <p style="margin-left: 10px;">
+            <input type="file" (change)="selectFile($event)">
+        </p>
         <button mat-raised-button color="primary" class="get-text-button" (click)="detectImageLandmark()">Get Landmark</button>
         <mat-form-field style="width: 60%; display:inline-block; border: 0.5px solid; margin: 8px; ">
             <textarea matInput rows="2" ngModel #imageLandmark="ngModel" [(ngModel)]="imageLandmarkValue"></textarea>

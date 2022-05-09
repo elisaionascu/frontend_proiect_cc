@@ -11,12 +11,14 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   title = 'Cloud Computing Project';
-  form!: FormGroup;
   file!: File;
   imageLinkValue: string;
   imageTextValue: string;
   imageLandmarkValue: string;
   contentData: any;
+  landmarkContent: any;
+	url: any; 
+	message = "";
 
   constructor(private _dataService: DataService, private formBuilder: FormBuilder, private snackBar: MatSnackBar) {
     this.imageLinkValue = "";
@@ -25,25 +27,30 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createForm();
   }
-
-  createForm() {
-    this.form = this.formBuilder.group({
-      file_upload: null
-    });
-  }
-
-  onFileSelect(event: any) {
-    if (event.target.files && event.target.files.length > 0) {
-      this.file = event.target.files[0];
-      console.log(this.file);
-    }
-  }
-
-  upload() {
-
-  }
+	
+	selectFile(event: any) {
+		if(!event.target.files[0] || event.target.files[0].length == 0) {
+			this.message = 'You must select an image';
+			return;
+		}
+		
+		var mimeType = event.target.files[0].type;
+		
+		if (mimeType.match(/image\/*/) == null) {
+			this.message = "Only images are supported!";
+			return;
+		}
+		
+		var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+		
+		reader.onload = (_event) => {
+			this.message = "";
+			this.url = reader.result; 
+		}
+    this.file = event.target.files[0];
+	}
 
   openSnackBarRequest(message: any) {
     const config = new MatSnackBarConfig();
@@ -63,7 +70,6 @@ export class AppComponent implements OnInit {
       })
     }
   }
-  landmarkContent: any;
 
   detectImageLandmark() {
     console.log(this.file);
