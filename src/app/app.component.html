@@ -42,9 +42,14 @@
         <p style="margin-left: 10px;">
             <input type="file" (change)="selectFile($event)">
         </p>
-        <button mat-raised-button color="primary" class="get-text-button" (click)="detectImageLandmark()">Get Landmark</button>
+        <button mat-raised-button color="primary" class="get-text-button" (click)="detectImageLandmark(); addDynamicMarker()">Get Landmark</button>
         <mat-form-field style="width: 60%; display:inline-block; border: 0.5px solid; margin: 8px; ">
-            <textarea matInput rows="2" ngModel #imageLandmark="ngModel" [(ngModel)]="imageLandmarkValue"></textarea>
+            <textarea matInput rows="2" ngModel #imageLandmark="ngModel" [(ngModel)]="this.imageLandmarkValue"></textarea>
         </mat-form-field>
     </div>
+</div>
+<div>
+    <google-map height="500px" width="100%" [options]="options">
+        <map-marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition" [options]="markerOptions"></map-marker>
+    </google-map>
 </div>
