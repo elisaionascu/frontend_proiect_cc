@@ -2,6 +2,7 @@
     "name": "frontend-proiect-cc",
     "version": "0.0.0",
     "scripts": {
+        "heroku-postbuild": "ng build --prod",
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
@@ -14,6 +15,8 @@
         "node": "16.15.0"
     },
     "dependencies": {
+        "@angular/cli": "~13.3.5",
+        "@angular/compiler-cli": "~13.3.0",
         "@angular/animations": "~13.3.0",
         "@angular/cdk": "^13.3.6",
         "@angular/common": "~13.3.0",
@@ -32,12 +35,11 @@
         "rxjs": "~7.5.0",
         "stream-browserify": "^3.0.0",
         "tslib": "^2.3.0",
-        "zone.js": "~0.11.4"
+        "zone.js": "~0.11.4",
+        "typescript": "~4.6.2"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~13.3.5",
-        "@angular/cli": "~13.3.5",
-        "@angular/compiler-cli": "~13.3.0",
         "@types/jasmine": "~3.10.0",
         "@types/node": "^12.20.52",
         "dotenv-webpack": "^7.1.0",
@@ -46,7 +48,6 @@
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage": "~2.1.0",
         "karma-jasmine": "~4.0.0",
-        "karma-jasmine-html-reporter": "~1.7.0",
-        "typescript": "~4.6.2"
+        "karma-jasmine-html-reporter": "~1.7.0"
     }
 }
