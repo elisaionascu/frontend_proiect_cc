@@ -10,7 +10,9 @@ Introducere
 
 Proiectul pe care l-am realizat este o aplicație web care utilizează servicii din Google Cloud. Partea de backend a fost realizata in nodejs, iar pentru interfata am folosit Angular 12. Ambele tehnologii sunt foarte populare, ușor de folosit și customizat în funcție de necesități. Codul sursă a fost postat pe github la următoarele adrese: Repository backend: https://github.com/elisaionascu/backend_proiect_cc Repository frontend: https://github.com/elisaionascu/frontend_proiect_cc
 
-Link-ul unde găsiți prezentarea video a proiectului este https://youtu.be/Y-FKtsR4QJ8 , iar link-ul de publicare este https://aqueous-wave-63731.herokuapp.com/ În continuare voi prezenta serviciile în cloud folosite prin request-uri de tip REST (request-response), exemplificarea acestora atât din postman, cât și din cadrul aplicației.
+Link-ul unde găsiți prezentarea video a proiectului este https://youtu.be/Y-FKtsR4QJ8 , iar link-ul de publicare este https://aqueous-wave-63731.herokuapp.com/. Deployarea frontend-ului in Heroku nu mi-a reusit, am avut ceva erori de memorie pe care nu le-am putut rezolva in timp util.
+
+În continuare voi prezenta serviciile în cloud folosite prin request-uri de tip REST (request-response), exemplificarea acestora atât din postman, cât și din cadrul aplicației.
 
 Descriere problema
 
